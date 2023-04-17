@@ -1,0 +1,142 @@
+<html>
+<head>
+    <script type="text/javascript">
+        window.onload = function()
+        {
+            var hostInput = document.getElementById('host');
+            hostInput.value = window.location.host;
+        }
+
+        submitForm = function()
+        {
+            var searchForm = document.getElementById('searchForm');
+            var hostInput = document.getElementById('host');
+            searchForm.action = 'http://' + hostInput.value + '/guidedform'; searchForm.submit();
+        }
+    </script>
+</head>
+
+<body>
+
+GUIDED NAV LAUNCH PAGE
+
+<form name="search" action="" method="post" id="searchForm">
+	<b>Host and Port</b>
+	<input type="text" name="host" value="" id="host"/>
+	<br>
+	<b>Version Name</b>
+	<input type="text" name="version" value="v1.1" />
+	<br>
+	datarealm
+	<input type="text" name="dataRealm" value="100000" />
+	<br>
+	companyId
+	<input type="text" name="companyId" value="Enservio, Inc." />
+	<br>	
+	topTierCategoryName
+	<input type="text" name="topTierCategoryName" value="" />
+	<br>	
+	carrier
+	<input type="text" name="carrier" value="solr-carrier" />
+	<br>	
+	fullURL
+	<input type="text" name="fullUrl" value="" />
+	<br>
+	isRetailCustomer
+	<input type="checkbox" name="isRetailCustomer" value="true" />
+	(NOTE: This parameter is still here for backwards compatibility, but it is the same as setting retailCustomerType to "PPO")
+	<br>
+	mediaSearchFlag
+	<input type="checkbox" name="mediaSearchFlag" value="true" />
+	<br>
+	retailCustomerType
+	<select name="retailCustomerType">
+		<option>None</option>
+		<option value="PPO">PPO</option>
+		<option value="WPO">WPO</option>
+		<option value="WPO_PPO" selected>WPO/PPO</option>
+	</select>
+	<br>
+	retailFilter
+	<select name="retailFilter">
+		<option>None</option>
+		<option value="AUTO">AUTO</option>
+		<option value="PPO">PPO</option>
+		<option value="WPO">WPO</option>
+		<option value="WPO_PPO">WPO/PPO</option>
+	</select>
+	<br>
+	origin
+	<input type="text" name="origin" value="CE" /><br>
+	intended category
+	<input type="text" name="testIntendedCategory" value="" />
+	<br>
+	search terms
+	<input type="text" name="originSearchDescription" value="fridge" />
+	<br>
+	Brand
+	<input type="text" name="originalBrand" value="" />
+	<br>
+	guidancePrice
+	<input type="text" name="guidancePrice" value="" />
+	<br>
+	isvPrice
+	<input type="text" name="isvPrice" value="" />
+	<br>
+	numProductsPerPage
+	<input type="text" name="numProductsPerPage" value="20" />
+	<br>
+	commercial/residental
+	<input type="text" name="commercialResidentialTag" value="commercial_And_Residential" />
+	<br>
+	userViewStyle
+	<input type="text" name="userViewStyle" value="" />
+	<br>
+	showLongDescription
+	<input type="text" name="showProductLongDescription" value="true" />
+	<br>
+	
+	depreciationCategoryIW
+	<input type="text" name="depreciationCategoryIW" value="" /><br />
+	
+	discontinuedItems
+    <input type="checkbox" name="discontinuedItems" value="true" /><br />
+
+    modelNumber
+    <input type="text" name="modelNumber" /><br />
+
+    isServiceProvider
+    <input type="checkbox" name="isServiceProvider" value="true" checked="true"/><br />
+
+    accessRTR
+    <input type="checkbox" name="accessRTR" value="true" checked="true"/><br />
+
+    statedAge
+    <input type="text" name="statedAge" /><br />
+
+    statedQuantity
+    <input type="text" name="statedQuantity" /><br />
+
+    originalVendor
+    <input type="text" name="originalVendor" /><br />
+    
+    locale
+    <input type="text" name="locale" /><br />
+    
+    usePopularity
+    <select name="usePopularity">
+		<option value="true">TRUE</option>
+		<option value="false" selected>FALSE</option>
+	</select>
+	<br />
+	
+    <input type="hidden" name="localResourcesFlag" value="true" />
+
+    <br />
+	<input type="button" value="Submit" onclick="submitForm();"/>
+
+</form>
+
+
+</body>
+</html>
